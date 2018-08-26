@@ -7,7 +7,7 @@ instance/
 
 .pytest_cache/
 .coverage
-.vscode
+.vscode/
 htmlcov/
 
 dist/
