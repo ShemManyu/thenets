@@ -26,5 +26,5 @@ class User(db.Model):
     def check_password(self, password):
         return check_password_hash(self.pwdhash, password)
 
-#class Coversation(db.Model):
-#    pass
+class Coversation(db.Model):
+    pass
