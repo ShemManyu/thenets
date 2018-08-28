@@ -8,9 +8,11 @@ instance/
 .pytest_cache/
 .coverage
 .env
-.vscode/
+.vscode/settings.json
+config.py
 htmlcov/
 
 dist/
 build/
 *.egg-info/
+nets/Untitled-1

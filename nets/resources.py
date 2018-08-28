@@ -1,17 +1,5 @@
-import os
-
-from flask import Flask, request, Response
-from flask_restful import Api, Resource, abort
-from werkzeug import security
-from flask_oauthlib.client import OAuth
-
-from dotenv import load_dotenv
-load_dotenv()
-
-app = Flask(__name__)
-api = Api(app)
-
-oauth = OAuth(app)
+from flask import request
+from flask_restful import Resource
 
 chatgroups = {
     'group1': {
@@ -61,9 +49,3 @@ class Conversation(Resource):
             'from': userid
         }
         return conversations[conversation_id]
-
-api.add_resource(ChatGroup, '/groups/<string:group_id>')
-api.add_resource(Conversation, '/chat/<string:conversation_id>')
-
-if __name__ == "__main__":
-    app.run(debug=True)
