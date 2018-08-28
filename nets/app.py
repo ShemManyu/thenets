@@ -1,8 +1,17 @@
+import os
+
 from flask import Flask, request, Response
 from flask_restful import Api, Resource, abort
+from werkzeug import security
+from flask_oauthlib.client import OAuth
+
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 api = Api(app)
+
+oauth = OAuth(app)
 
 chatgroups = {
     'group1': {
@@ -11,7 +20,7 @@ chatgroups = {
     },
     'group2': {
         'message1': {'from': 'user1', 'message': 'Hey guys too'},
-        'message2': {'from': 'user2', 'message': 'Hey user1 too'}
+        'message2': {'from': 'user2', 'message': 'Hey user1 too'} 
     }
 }
 
