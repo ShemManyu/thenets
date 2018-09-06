@@ -37,3 +37,6 @@ api.add_resource(Conversation, '/chat/<string:conversation_id>')
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+#In web browse make sure url is 127.0.0.1:500 
+#instead of localhost
